@@ -20,9 +20,11 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.29.0'
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.9.3'
+    
+    // 🔑 ВАЖНО: добавляем JUnit Platform Launcher для Gradle 9+
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {
     useJUnitPlatform()
-    systemProperty 'chromeoptions.prefs', System.getProperty('chromeoptions.prefs', "profile.password_manager_leak_detection=false")
 }
